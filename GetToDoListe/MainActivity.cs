@@ -40,7 +40,8 @@ namespace GetToDoListe
             string[] titles = items.Select(x => x.Title).ToArray();
 
 
-            listViewToDo.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, titles);
+            //listViewToDo.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, titles);
+            listViewToDo.Adapter = new ToDoItemAdapter(this, items);
         }
     }
 }
