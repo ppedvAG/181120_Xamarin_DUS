@@ -2,18 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HelloXForms"
-             x:Class="HelloXForms.MainPage">
-
-    <StackLayout
+             x:Class="HelloXForms.MainPage"
+             BackgroundColor="CornflowerBlue">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="DefaultFontSize">60</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <!-- Margin - Aussenabstand: -->
+    <!--   l,o,r,u -->
+    <!-- lr,ou-->
+    <!-- alleRichtungen-->
+    <!-- Seite 1-->
+    <!--<StackLayout
         BackgroundColor="MediumSpringGreen"
         Spacing="20">
-        <!-- Steuerelemente -->
 
         <Button Text="Button 1"/>
-        <!-- Margin - Aussenabstand: -->
-        <!--   l,o,r,u -->
-        <!-- lr,ou-->
-        <!-- alleRichtungen-->
+
         <Button Text="Button" Clicked="Button_Clicked"/>
         <Button Text="PANIK" FontSize="40" BackgroundColor="YellowGreen"
                  VerticalOptions="FillAndExpand"/>
@@ -23,8 +31,52 @@
             <Label Text="Vorname:" TextColor="Black"/>
             <Button Text="Button 3"/>
         </StackLayout>
+    </StackLayout>-->
+    
+    <!-- Seite 2 -->
+    <!--<StackLayout VerticalOptions="Center">
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <x:Double x:Key="DefaultFontSize">20</x:Double>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        <Label 
+            FontAttributes="Bold"
+            TextColor="Orange"
+            HorizontalTextAlignment="Center"
+            FontSize="{StaticResource Key=DefaultFontSize}" 
+            Text="Welcome to Xamarin"/>
+        <Label 
+            FontAttributes="Bold"
+            TextColor="Orange"
+            HorizontalTextAlignment="Center"
+            FontSize="{StaticResource Key=DefaultFontSize}" 
+            Text="Cross-platform apps made easy"/>
+        <Button Text="Login" BackgroundColor="Orchid"/>
+        <Button Text="Register" BackgroundColor="DarkSalmon"/>
+    </StackLayout>-->
 
 
+    <StackLayout VerticalOptions="Center">
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <x:Double x:Key="DefaultFontSize">20</x:Double>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        <Label 
+            FontAttributes="Bold"
+            TextColor="Orange"
+            HorizontalTextAlignment="Center"
+            FontSize="{StaticResource Key=DefaultFontSize}" 
+            Text="Welcome to Xamarin"/>
+        <Label 
+            FontAttributes="Bold"
+            TextColor="Orange"
+            HorizontalTextAlignment="Center"
+            FontSize="{StaticResource Key=DefaultFontSize}" 
+            Text="Cross-platform apps made easy"/>
+        <Button Text="Login" BackgroundColor="Orchid"/>
+        <Button Text="Register" BackgroundColor="DarkSalmon"/>
     </StackLayout>
 
 </ContentPage>
