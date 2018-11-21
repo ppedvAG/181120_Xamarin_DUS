@@ -13,5 +13,10 @@ namespace HelloXForms
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            stackLayoutIrgendwas.IsVisible = ! stackLayoutIrgendwas.IsVisible;
+        }
     }
 }

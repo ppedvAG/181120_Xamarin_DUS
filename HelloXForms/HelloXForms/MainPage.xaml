@@ -4,11 +4,27 @@
              xmlns:local="clr-namespace:HelloXForms"
              x:Class="HelloXForms.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms! --- by michi" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout
+        BackgroundColor="MediumSpringGreen"
+        Spacing="20">
+        <!-- Steuerelemente -->
+
+        <Button Text="Button 1"/>
+        <!-- Margin - Aussenabstand: -->
+        <!--   l,o,r,u -->
+        <!-- lr,ou-->
+        <!-- alleRichtungen-->
+        <Button Text="Button" Clicked="Button_Clicked"/>
+        <Button Text="PANIK" FontSize="40" BackgroundColor="YellowGreen"
+                 VerticalOptions="FillAndExpand"/>
+        <StackLayout x:Name="stackLayoutIrgendwas" Orientation="Horizontal"
+                     BackgroundColor="Red"
+                     VerticalOptions="End">
+            <Label Text="Vorname:" TextColor="Black"/>
+            <Button Text="Button 3"/>
+        </StackLayout>
+
+
     </StackLayout>
 
 </ContentPage>
