@@ -7,6 +7,21 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <x:Double x:Key="DefaultFontSize">60</x:Double>
+
+            <!-- Expliziter Style -->
+            <Style TargetType="Button" x:Key="DefaultButtonStyle">
+                <Setter Property="BackgroundColor" Value="Ivory"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="DarkOrchid"/>
+            </Style>
+
+            <!-- Impliziter Style -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Fuchsia"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="TextColor" Value="Firebrick"/>
+            </Style>
+
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -58,25 +73,15 @@
 
 
     <StackLayout VerticalOptions="Center">
-        <StackLayout.Resources>
-            <ResourceDictionary>
-                <x:Double x:Key="DefaultFontSize">20</x:Double>
-            </ResourceDictionary>
-        </StackLayout.Resources>
-        <Label 
-            FontAttributes="Bold"
-            TextColor="Orange"
-            HorizontalTextAlignment="Center"
-            FontSize="{StaticResource Key=DefaultFontSize}" 
-            Text="Welcome to Xamarin"/>
-        <Label 
-            FontAttributes="Bold"
-            TextColor="Orange"
-            HorizontalTextAlignment="Center"
-            FontSize="{StaticResource Key=DefaultFontSize}" 
-            Text="Cross-platform apps made easy"/>
-        <Button Text="Login" BackgroundColor="Orchid"/>
-        <Button Text="Register" BackgroundColor="DarkSalmon"/>
+        
+        <Button Text="Login"
+                FontSize="20"
+                TextColor="Accent"
+                BackgroundColor="Orchid"/>
+        <Button Text="Register" Style="{StaticResource DefaultButtonStyle}"
+                BackgroundColor="DarkSalmon"/>
+        <Button Text="Demo" Style="{StaticResource DefaultButtonStyle}"/>
+        <Button Text="Implizit"/>
     </StackLayout>
 
 </ContentPage>
