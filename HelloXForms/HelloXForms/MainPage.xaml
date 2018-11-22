@@ -135,13 +135,14 @@
 
     </AbsoluteLayout>-->
 
-    <RelativeLayout>
+    <!--<RelativeLayout>
         <BoxView x:Name="boxViewRoot" BackgroundColor="DarkCyan"
                  RelativeLayout.WidthConstraint="{ConstraintExpression
                  Type=RelativeToParent,Property=Width,Factor=1}"
                  RelativeLayout.HeightConstraint="{ ConstraintExpression
                  Type=RelativeToParent,Property=Height,Factor=0.3}"/>
 
+      
         <BoxView 
                  BackgroundColor="LightGoldenrodYellow"
                  HeightRequest="100"
@@ -158,6 +159,21 @@
                  Factor=1,
                  Constant=-50}"
                  />
-    </RelativeLayout>
+        
+        
+    </RelativeLayout>-->
+
+    <StackLayout>
+        
+        <Label TextColor="Black" FontSize="15">
+            <Label.Text>
+Das ist eine Zeile.
+Das ist Zeile2.
+Das ist Zeile 3 lalallalala
+            </Label.Text>
+        </Label>
+        
+        
+    </StackLayout>
     
 </ContentPage>
