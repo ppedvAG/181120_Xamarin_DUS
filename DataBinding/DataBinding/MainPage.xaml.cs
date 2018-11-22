@@ -13,5 +13,10 @@ namespace DataBinding
         {
             InitializeComponent();
         }
+
+        //private void SliderWert_ValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    labelWert.Text = $"Wert ist: {sliderWert.Value.ToString()}";
+        //}
     }
 }
