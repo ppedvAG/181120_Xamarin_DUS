@@ -9,20 +9,50 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout>
-        <!-- Place new controls here -->
+    <!--<StackLayout BindingContext="{x:Reference entryStandard}" >
+        <Entry x:Name="entryStandard" Placeholder="Standarddatenquelle" />
         <Slider x:Name="sliderWert" Minimum="0" Maximum="100"/>
-        
         <Label x:Name="labelWert"
            Text="{Binding Source={x:Reference sliderWert}
             ,Path=Value
             ,StringFormat='Wert ist: {0}'}" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+
+        <Label Text="{Binding Source={x:Reference sliderWert}, Path=Value}"/>
+        <Label Text="{Binding Text, Source={x:Reference entryStandard} }"/>
+        <Label Text="{Binding Text}"/>
+
         <Entry x:Name="entryWert" Text="{Binding Source={x:Reference sliderWert}, Path=Value, Mode=TwoWay}"/>
         <BoxView BackgroundColor="{Binding Source={x:Reference entryWert}
             ,Path=Text
             ,Converter={StaticResource farbk}}"/>
-    </StackLayout>
+    </StackLayout>-->
 
+    <StackLayout Padding="30">
+        <!-- SearchBar = Entry mit einem anderen Design -->
+        <SearchBar x:Name="searchBarName" TextChanged="SearchBarName_TextChanged"/>
+        <Button x:Name="buttonPerson" Text="Personen laden ..." Clicked="ButtonPerson_Clicked"/>
+        
+        <ListView x:Name="listViewPersonen"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}" Appearing="TextCell_Appearing"/>
+                    <!--<ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Vorname}"/>
+                            <Label Text="{Binding Nachname}"/>
+                            <Label Text="{Binding Alter}"/>
+                            <Label Text="{Binding Kontostand}"/>
+                        </StackLayout>
+                    </ViewCell>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+   
+    
 </ContentPage>
