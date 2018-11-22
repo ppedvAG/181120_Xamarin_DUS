@@ -2,13 +2,110 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Steuerelemente"
-             x:Class="Steuerelemente.MainPage">
+             x:Class="Steuerelemente.MainPage"
+             BackgroundColor="White">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ScrollView>
+        <StackLayout Padding="30">
+
+            <!--Beschriftungen-->
+
+            <Label Text="Hallo Welt" TextColor="Black"/>
+            <Button Text="Klick mich !" Clicked="Button_Clicked"/>
+            <Entry x:Name="entryUsername" Placeholder="Username" Keyboard="Numeric"/>
+            <Entry Placeholder="Passwort" IsPassword="True" Keyboard="Numeric"/>
+            <Switch Toggled="Switch_Toggled" IsToggled="True" />
+            <Picker>
+                <Picker.Items>
+                    <x:String>Apfel</x:String>
+                    <x:String>Birne</x:String>
+                    <x:String>Banane</x:String>
+                    <x:String>Orange</x:String>
+                </Picker.Items>
+            </Picker>
+            <Editor HeightRequest="100" Placeholder="Notizen..."/>
+            <DatePicker MinimumDate="1.1.2018" />
+            <TimePicker Format="" Time="12:00"/>
+            <Slider Minimum="0" Maximum="100"/>
+            <Stepper Minimum="0" Maximum="10"/>
+
+
+            <!--Bildquellen:
+              1) Download per URI
+              2) Bild als Ressource ablegen ( .NET Standard-Projekt)
+              3) Bild als Ressource ablegen (Plattform-Projekt)
+          
+     Image Source="http://www.zooroyal.de/magazin/wp-content/uploads/2017/04/hamster-760x560.jpg" /-->
+            <!--<Image x:Name="imageBild" Source="{local:EmbeddedImage ImageID=Steuerelemente.Images.hamster.jpg}" />-->
+
+            <!--Bei Android: ressources/drawable/hamster.jpg, iOS: resources, UWP: assets-->
+            <Image x:Name="imageBild" Source="hamster.jpg" />
+
+
+            <BoxView HeightRequest="100">
+                <BoxView.BackgroundColor>
+                    <OnPlatform Android="DarkGreen" iOS="DarkBlue" UWP="Red"/>
+                </BoxView.BackgroundColor>
+            </BoxView>
+            <BoxView HeightRequest="100">
+                <BoxView.BackgroundColor>
+                    <OnPlatform Android="DarkGreen" iOS="DarkBlue" UWP="Red"/>
+                </BoxView.BackgroundColor>
+            </BoxView>
+            <BoxView HeightRequest="100">
+                <BoxView.BackgroundColor>
+                    <OnPlatform Android="DarkGreen" iOS="DarkBlue" UWP="Red"/>
+                </BoxView.BackgroundColor>
+            </BoxView>
+        </StackLayout>
+    </ScrollView>
+
+
+    <!--<TableView>
+        <TableRoot>
+            <TableSection Title="Einfache Einstellungen">
+                <TextCell Text="Das ist ein Text"/>
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Datum wählen:"/>
+                        <TimePicker HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+            
+            
+            
+            
+            <TableSection Title="Admin Einstellungen">
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+            </TableSection>
+            <TableSection Title="Entwickler Einstellungen">
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+            </TableSection>
+            <TableSection Title="Entwickler Einstellungen">
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+            </TableSection>
+            <TableSection Title="Entwickler Einstellungen">
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+            </TableSection>
+            <TableSection Title="Entwickler Einstellungen">
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notifications" On="True"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>-->
+
 
 </ContentPage>
