@@ -31,6 +31,7 @@
 
     <StackLayout Padding="30">
         <!-- SearchBar = Entry mit einem anderen Design -->
+        <local:EmailEntry Text="demo@ppedv.at" />
         <SearchBar x:Name="searchBarName" TextChanged="SearchBarName_TextChanged"/>
         <Button x:Name="buttonPerson" Text="Personen laden ..." Clicked="ButtonPerson_Clicked"/>
         
